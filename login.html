@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="bootstrap.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <title>jQuery Exam</title>
+</head>
+
+<body>
+  <div class="container">
+    <a class="active" href="home.html"><i class="fa fa-fw fa-home"></i> Home</a>
+    <a href="search.html"><i class="fa fa-fw fa-search"></i> Search</a>
+    <a href="contact.html"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+    <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
+  </div>
+
+  <section class="LoginSection">
+    <form class="offset-4 col-sm-4 bg-dark p-5 text-white" id="form">
+      <div class="form-group">
+        <label for="mail">Email address</label>
+        <input type="email" class="form-control" id="mail" aria-describedby="emailHelp" placeholder="Enter email">
+      </div>
+      <br><br>
+      <div class="form-group ">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Password">
+      </div>
+      <br><br>
+      <button type="button" class="btn btn-primary hidden offset-3 my-3 col-5" onclick="checkLogin()">Submit</button>
+    </form>
+    </div>
+  </section>
+
+  <script>
+    let UserList;
+    $(document).ready(function () {
+      $.getJSON("login.json", function (data) {
+        UserList = data;
+      }).fail(function () {
+        alert("An error has occurred.");
+      });
+    });
+
+    function checkLogin() {
+      $.map(UserList, function (UserObj, Index) {
+        if (UserObj.email == $('#mail').val() && UserObj.password == $('#password').val()) {
+
+          localStorage.setItem("name", UserObj.firstname);
+          localStorage.setItem("lname", UserObj.lastname);
+          localStorage.setItem("email", UserObj.email);
+          localStorage.setItem("mobile", UserObj.mobile);
+          localStorage.setItem("loginName", UserObj.loginName);
+          localStorage.setItem("role", UserObj.role);
+          localStorage.setItem('code', 'login');
+
+          location.href = "search.html";
+        }
+      });
+    }
+  </script>
+  <script src="popper.js"></script>
+  <script src="JQuery-3.5.1.js"></script>
+  <script src="bootstrap.js"></script>
+
+</body>
+
+</html>

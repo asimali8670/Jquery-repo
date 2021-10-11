@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="bootstrap.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>JQuery Exam</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <a class="active" href="home.html"><i class="fa fa-fw fa-home"></i> Home</a>
+    <a href="search.html"><i class="fa fa-fw fa-search"></i> Search</a>
+    <a href="contact.html" id="contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+    <a href="login.html"><i class="fa fa-fw fa-user"></i> Login</a>
+    <a href="login.html"><i class="fa fa-fw fa-user"></i> Logout</a>
+  </div>
+
+
+  <script>
+    setTimeout(function () {
+
+      $('#contact').fadeOut('fast');
+    }, 5); // <-- time in milliseconds
+    alert("user must login to display contacts");
+  </script>
+
+
+  <script src="popper.js"></script>
+  <script src="bootstrap.js"></script>
+</body>
+
+</html>

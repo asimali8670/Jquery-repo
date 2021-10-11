@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <a class="active" href="home.html"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a href="#"><i class="fa fa-fw fa-search"></i> Search</a>
+        <a href="contact.html"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+        <a href="login.html"><i class="fa fa-fw fa-user"></i> Login</a>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="mt-5 text-center display-3">Welcome <span id="user"></span></h2>
+        </div>
+    </div>
+
+
+    <header>
+        <div class="container mt-5 hide">
+            <div class="header-container my-2">
+                <div class="relative">
+                    <input name="search" id="search" class="" type="search" placeholder="Search a contact ...">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="container hide">
+            <div class="table">
+                <div class="table-header table-row relative bg-primary text-light mb-1">
+                    <div class="text-center table-cell">
+                        <h3 id="id-header" class="h6 sort-by"><span class="d-none mr-1 fa fa-caret-up fa-sm"></span>ID
+                        </h3>
+                    </div>
+                    <div class=" table-cell">
+                        <h3 id="firstname-header" class="h6 sort-by"><span
+                                class="d-none mr-1 fa fa-caret-up fa-sm"></span>First name</h3>
+                    </div>
+                    <div class=" table-cell">
+                        <h3 id="lastname-header" class="h6 sort-by"><span
+                                class="d-none mr-1 fa fa-caret-up fa-sm"></span>Last name</h3>
+                    </div>
+
+                    <div class=" table-cell">
+                        <h3 id="email-header" class="h6 sort-by"><span
+                                class="d-none mr-1 fa fa-caret-up fa-sm"></span>Email</h3>
+                    </div>
+                    <div class=" table-cell">
+                        <h3 id="phone-header" class="h6 sort-by"><span
+                                class="d-none mr-1 fa fa-caret-up fa-sm"></span>Mobile</h3>
+                    </div>
+
+                    <div class=" table-cell">
+                        <h3 id="city-header" class="h6 sort-by"><span
+                                class="d-none mr-1 fa fa-caret-up fa-sm"></span>City</h3>
+                    </div>
+                </div>
+                <div id="contacts-list" class="">
+
+                </div>
+            </div>
+        </section>
+    </main>
+    <section id="form-wrapper" class="hide">
+        <div class="container relative">
+            <form id="form-new-contact" action="" method="" class="table-row mt-3 mb-3">
+                <div class="text-center"><span class="fa fa-user-plus fa-sm mb-2"></span></div>
+                <div class="">
+                    <label for="first-name">First name: *</label>
+                    <input name="first-name" id="first-name" class="form-control form-control" type="text" value="John"
+                        placeholder="First name" required>
+                </div>
+                <div class="">
+                    <label for="last-name">Last name: *</label>
+                    <input name="last-name" id="last-name" class="form-control form-control" type="text" value="Doe"
+                        placeholder="Last name" required>
+                </div>
+                <div class="">
+                    <label for="email">Email: *</label>
+                    <input name="email" id="email" class="form-control form-control" type="email" value="john@doe.com"
+                        placeholder="Email" required>
+                </div>
+                <div class="">
+                    <label for="phone">Mobile: *</label>
+                    <input name="phone" id="phone" class="form-control form-control" type="tel" value="111-555-8989"
+                        placeholder="Phone" required>
+                </div>
+                <div class="">
+                    <label for="city">City: *</label>
+                    <input name="city" id="city" class="form-control form-control" type="tel" value="Bhopal"
+                        placeholder="City" required>
+                </div>
+                <div class="">
+                    <button id="add-contact" type="" class="btn btn btn-danger fa fa-plus-circle"></button>
+                </div>
+            </form>
+        </div>
+    </section>
+    </div>
+    <script>
+        $('#user').text(localStorage.getItem('name'));
+        // console.log(localStorage.getItem('name'))
+        let name = localStorage.getItem('name');
+        let code = localStorage.getItem('code');
+
+        if (name && code == 'login') {
+            // alert('Welcome '+ name);
+            $('.logins').addClass('hide');
+        }
+        else {
+            localStorage.clear();
+            window.location.href = 'login.html';
+            $('.logouts').addClass('hide');
+        }
+    </script>
+
+    <script src="search.js"></script>
+    <script src="JQuery-3.5.1.js"></script>
+    <script src="popper.js"></script>
+    <script src="bootstrap.js"></script>
+
+</body>
+
+</html>

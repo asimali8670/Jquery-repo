@@ -1,0 +1,283 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+
+.container {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.container a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.container a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+@media screen and (max-width: 500px) {
+  .container a {
+    float: none;
+    display: block;
+  }
+}
+
+.hide{
+	display: none;
+}
+.hides{
+	display: none;
+}
+
+.LoginSection {
+    float: left;
+  padding: 100px;
+  text-decoration: none;
+  font-size: 25px;
+
+}
+/******************** search ********************************/
+html {
+	overflow-y: scroll;
+}
+
+body {
+	background: #f0f0f0;
+}
+
+.inactive {
+	color: #b8b8b8;
+	cursor: not-allowed !important;
+}
+
+h3,
+h4,
+.h3,
+.h4,
+.h5,
+.h6 {
+	margin: 0;
+}
+
+.red {
+	color: red;
+}
+
+.text-large {
+	font-size: 1.5rem;
+}
+
+.relative {
+	position: relative;
+}
+
+.container {
+	max-width: 1500px;
+}
+
+.bg-primary {
+	background-color: #41abff!important;
+}
+
+.sort-by,
+span.toggle-form,
+.btn,
+.contact-actions span,
+.cancel-edit-contact,
+#csv-show {
+	cursor: pointer;
+}
+
+/*** Header ***/
+
+.header-container {
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	grid-gap: 20px;
+	align-items: center;
+}
+
+/*** Search ***/
+
+#search {
+	min-width: 230px;
+	padding: 3px 36px 3px 6px;
+	border-radius: 3px;
+	box-sizing: border-box;
+	border: solid 1px #e2e2e2;
+	background: white;
+}
+
+#search-reset {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 30px;
+	text-align: center;
+	display: block;
+	line-height: 32px;
+}
+
+/*** Contacts table ***/
+
+div.table {
+	padding-bottom: 130px;
+}
+
+.table-header {
+	padding: 5px !important;
+	align-items: center;
+}
+
+.table-header.fixed {
+	position: fixed;
+	top: 0;
+	width: 1470px;
+	-webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+	-moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+	box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+}
+
+@media(max-width: 1470px) {
+	.table-header.fixed {
+		width: 100%;
+		padding: 15px 15px 5px !important;
+		left: 0;
+	}
+}
+
+.table-row {
+	display: grid;
+	grid-template-columns: 40px repeat(2, 1fr) 1fr 1fr 1fr 95px;
+	grid-column-gap: 10px;
+	padding: 2px 5px;
+	background: #ffffff;
+}
+
+form.table-row {
+	background: #ecf7ff;
+}
+
+.table .table-row:not(.table-header) {
+	border: solid 1px #e2e2e2;
+}
+
+.table-cell {
+	padding: 3px;
+	cursor: context-menu;
+	word-break: break-word;
+}
+
+.editable-cell {
+	background: rgba(255, 255, 255, 0.6);
+	/*cursor: text;*/
+}
+
+.editable-cell a {
+	color: inherit;
+}
+
+
+.table-cell input,
+.table-cell textarea,
+input.editable-cell-input {
+	width: 100%;
+}
+
+
+
+.contact-actions span:not(:last-child) {
+	margin-right: 4px;
+}
+
+.cancel-edit-contact {
+	width: 100%;
+	display: block;
+	line-height: 1;
+}
+
+/*** drag&drop ***/
+
+.dragndrop-placeholder {
+	background: #ecf7ff;
+	border: solid 1px rgba(0, 0, 0, 0.1);
+}
+
+
+/*** Form ***/
+
+#form-wrapper {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background: #ffffff;
+	box-sizing: border-box;
+	-webkit-box-shadow: 0 40px 40px 30px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 40px 40px 30px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 40px 40px 30px rgba(0, 0, 0, 0.2);
+	border-top: solid 2px #e0e0e0;
+}
+
+#form-new-contact {
+	align-items: end;
+	background: transparent;
+}
+
+#form-new-contact input {
+	background: #f4f4f4;
+}
+
+#add-contact {
+	height: 38px;
+	width: 100%;
+}
+
+label {
+	font-weight: 500;
+}
+
+/*** CSV ***/
+
+button#csv-show {
+	background: rgba(255, 255, 255, 0.25);
+	border: solid 1px rgba(255, 255, 255, 0.25);
+	width: 100%;
+	text-align: center;
+	color: inherit;
+}
+
+button#csv-show:hover {
+	background: rgba(255, 255, 255, 0.90);
+	color: initial;
+}
+
+#overlay {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.8);
+	padding: 20px;
+}
+
+#csv-container {
+	background: #ffffff;
+	padding: 20px 30px 40px;
+}
+
+#csv-output {
+	width: 100%;
+	min-height: 300px;
+	resize: vertical;
+	background: #f4f4f4;
+	border: 1px solid #ced4da;
+}
+
